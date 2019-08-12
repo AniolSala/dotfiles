@@ -1,0 +1,1 @@
+/home/usuari/.vimrc
