@@ -38,12 +38,12 @@ own_window_colour 000000
 TEXT
 ${goto 185}${voffset -10}${color0}${font Zekton:style=bold:size=12}  Aniol Sala
 ${goto 80}${voffset 20}${color}${font} :
-${goto 0}${voffset 75}${font Zekton:style=bold:size=30}${time %H:%M}${font}
-${goto 160}${voffset 0}${font Zekton:style=Bold:size=9}Battery
+${goto 0}${voffset 85}${font Zekton:size=25}${time %H}${voffset -16}${font Zekton:size=40}${time %M }${font}
+${goto 160}${voffset -10}${font Zekton:style=Bold:size=9}Battery
 ${alignc -30}${font Zekton:style=Bold:size=9}${battery_percent BAT0}%
-${goto 49}${voffset 45}CPU${voffset -5}${color}${goto 128}RAM
+${goto 47}${voffset 47}CPU${voffset -5}${color}${goto 128}RAM
 ${goto 130}${font Zekton:style=Bold:size=9}${memperc}%
-${goto 78}${voffset 25}${font Zekton:style=Bold:size=7}HDused
-${goto 75}${voffset 0}${font Zekton:style=Bold:size=8}${fs_used /home}
+${goto 78}${voffset 30}${font Zekton:style=Bold:size=7}HDused
+${goto 75}${voffset 0}${font Zekton:style=Bold:size=7}${fs_used /home}
 
 ${image /home/usuari/.config/.conky/lsd.png -p 10,0 -s 255x412}
