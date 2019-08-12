@@ -1,0 +1,149 @@
+#!/bin/bash
+key=$(</home/usuari/.config/i3/i3blocks/blocklets/owm_key) # https://openweathermap.org/faq#error401 for the key
+zip="24504"
+response=$(curl --silent \
+	"http://api.openweathermap.org/data/2.5/weather?appid=$key&zip=$zip&units=imperial")
+
+temp=$(echo $response | jq '.["main"]["temp"]')
+humd=$(echo $response | jq '.["main"]["humidity"]')
+wind=$(echo $response | jq '.["wind"]["speed"]')
+wdir=$(echo $response | jq '.["wind"]["deg"]')
+cove=$(echo $response | jq '.["clouds"]["all"]')
+rain=$(echo $response | jq '.["rain"]["1h"]')
+_tim=$(echo $response | jq '.["dt"]')
+sunu=$(echo $response | jq '.["sys"]["sunrise"]')
+sund=$(echo $response | jq '.["sys"]["sunset"]')
+cond=$(echo $response | jq '.["weather"][0]["main"]' | tr -d \")
+desc=$(echo $response | jq '.["weather"][0]["description"]' | tr -d \")
+
+#declare -A conditions=(
+#						["Ash"]=""
+#						["Clear"]=""
+#						["Clouds"]=""
+#						["Drizzle"]=""
+#						["Dust"]=""
+#						["Fog"]=""
+#						["Haze"]=""
+#						["Rain"]=""
+#						["Sand"]=""
+#						["Smoke"]=""
+#						["Snow"]=""
+#						["Squall"]=""
+#						["Thunderstorm"]=""
+#						["Tornado"]=""
+#)
+
+if (( $_tim < $sunu ));
+then
+	declare -A conditions=(
+							["Ash"]=""
+							["Clear"]=""
+							["Clouds"]=""
+							["Drizzle"]=""
+							["Dust"]=""
+							["Fog"]=""
+							["Haze"]=""
+							["Rain"]=""
+							["Sand"]=""
+							["Smoke"]=""
+							["Snow"]=""
+							["Squall"]=""
+							["Thunderstorm"]=""
+							["Tornado"]=""
+	);
+elif (( $_tim > $sunu )) || (( $_tim < $sund ));
+then
+	declare -A conditions=(
+							["Ash"]=""
+							["Clear"]=""
+							["Clouds"]=""
+							["Drizzle"]=""
+							["Dust"]=""
+							["Fog"]=""
+							["Haze"]=""
+							["Rain"]=""
+							["Sand"]=""
+							["Smoke"]=""
+							["Snow"]=""
+							["Squall"]=""
+							["Thunderstorm"]=""
+							["Tornado"]=""
+	);
+else
+	declare -A conditions=(
+							["Ash"]=""
+							["Clear"]=""
+							["Clouds"]=""
+							["Drizzle"]=""
+							["Dust"]=""
+							["Fog"]=""
+							["Haze"]=""
+							["Rain"]=""
+							["Sand"]=""
+							["Smoke"]=""
+							["Snow"]=""
+							["Squall"]=""
+							["Thunderstorm"]=""
+							["Tornado"]=""
+	);
+fi
+
+width=200
+height=200
+x=1920
+
+OPTIND=1
+while getopts ":f:W:H:" opt; do
+    case $opt in
+        f) datefmt="$OPTARG" ;;
+        W) width="$OPTARG" ;;
+        H) height="$OPTARG" ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            exit 1
+            ;;
+        :)
+            echo "Option -$OPTARG requires an argument." >&2
+            exit 1
+            ;;
+    esac
+done
+
+case "$BLOCK_BUTTON" in
+  1|2|3) 
+
+	# the position of the upper left corner of the popup
+	#posX=$(($BLOCK_X - $width / 2))
+	posX=1670
+	#posY=$(($BLOCK_Y - $height))
+	posY=18
+
+declare -A weather=(
+					["temp"]=$temp
+					["humidity"]=$humd
+					["wind speed"]=$wind
+					["wind dir"]=$wdir
+					["cloud cover"]=$cove
+					["rain in last hour"]=$rain
+					["condition"]=$cond
+)
+
+	i3-msg -q "exec yad --text-info \
+				--width=$width --height=$height \
+				--undecorated --fixed \
+				--close-on-unfocus --no-buttons \
+				--posx=$posX --posy=$posY \
+				--title=Weather \
+				--list --separator= \
+				--column=Weather
+				--column=ID:STRING \
+					"${weather[@]}"
+				> /dev/null"
+esac
+
+sym="${conditions["$cond"]}"
+deg="宅"
+
+echo $sym $temp$deg # full
+echo $sym $temp$deg # short
+echo "#b8bb26" # color
