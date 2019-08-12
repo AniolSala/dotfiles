@@ -24,6 +24,9 @@ font pango:scientifica 9
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn't scale on retina/hidpi displays.
 
+# Take a screenshot
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+
 # Init settings for mouse
 exec xinput set-prop 'Synaptics TM3336-001' 318 1 
 exec xinput set-prop 'Synaptics TM3336-001' 326 1 
