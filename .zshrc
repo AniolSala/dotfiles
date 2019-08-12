@@ -104,4 +104,3 @@ prompt_context () { }
 # Aliases
 # alias initcustom="xinput set-prop 10 318 1 && xinput set-prop 10 326 1 && xinput set-prop 10 338 .4 && exec bash"
 alias ba="exec bash"
-alias alt_init= "exec xinput set-prop 8 318 1 & exec xinput set-prop 8 326 1 & exec xinput set-prop 8 338 .4"

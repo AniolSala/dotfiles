@@ -34,7 +34,7 @@ if [ ! -n "${BULLETTRAIN_PROMPT_ORDER+1}" ]; then
     elixir
     git
     hg
-    cmd_exec_time
+#    cmd_exec_time
   )
 fi
 
