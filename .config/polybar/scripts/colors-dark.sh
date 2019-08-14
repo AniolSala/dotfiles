@@ -218,6 +218,7 @@ $LAUNCH &
 elif  [[ $1 = "-tiger" ]]; then
 # Replacing colors
 sed -i -e 's/bg = .*/bg = #a0252525/g' $PDIR/colors.ini
+sed -i -e 's/bg2 = .*/bg2 = #a0454545/g' $PDIR/colors.ini
 sed -i -e 's/fg = .*/fg = #f5f5f5/g' $PDIR/colors.ini
 sed -i -e 's/ac = .*/ac = #bb9944/g' $PDIR/colors.ini
 sed -i -e 's/bi = .*/bi = #fdd835/g' $PDIR/colors.ini
