@@ -95,6 +95,7 @@ bindsym Mod1+Shift+d exec dmenu_run
 # bindsym $mod+d         exec sh ~/.config/i3/scripts/polybar_wrapper rofi
 # bindsym $mod+d exec rofi -show drun
 bindsym $mod+d exec rofi -show drun -show-icons -drun-icon-theme
+bindsym $mod+Tab exec rofi -show window -show-icons
 
 # change focus
 bindsym Mod1+$left focus left
