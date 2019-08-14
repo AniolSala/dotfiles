@@ -77,6 +77,15 @@ set $right l
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 
+# gaps!
+gaps bottom 45
+gaps top 5
+gaps left 70
+gaps right 70
+gaps inner 10
+gaps outer all set 20
+for_window [class=".*"] border pixel 2
+
 # start a terminal
 bindsym Mod1+Return exec i3-sensible-terminal
 
@@ -127,7 +136,7 @@ bindsym Mod1+Shift+Right move right
 # bindsym Mod1+Right move right
 
 # split in horizontal orientation
-# bindsym Mod1+Shift+s split h
+bindsym Mod1+Shift+b split h
 
 # split in vertical orientation
 bindsym Mod1+v split v
@@ -225,10 +234,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+        bindsym $left       resize shrink width 10 px or 2 ppt
+        bindsym $down       resize grow height 10 px or 2 ppt
+        bindsym $up         resize shrink height 10 px or 2 ppt
+        bindsym $right      resize grow width 10 px or 2 ppt
 
         # Rapid increase / decrease
         bindsym Shift+$left       resize shrink width 150 px or 10 ppt
