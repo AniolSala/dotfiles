@@ -7,12 +7,12 @@ configuration {
 }
 
 window {
-    height:                         812; // 1440 - 2*16
+    height:                         912; // 1440 - 2*16
     width:                          380px;
     location:                       west;
     anchor:                         west;
-    x-offset:                       32;
-    y-offset:                       16;
+    x-offset:                       48;
+    y-offset:                       0;
 }
 
 mainbox {
