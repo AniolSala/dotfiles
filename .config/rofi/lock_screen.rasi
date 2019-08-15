@@ -13,7 +13,7 @@ window {
 
 mainbox {
     children:           [message, listview];
-    padding:            20px 50px;
+    padding:            20px 100px;
     background-color: transparent;
 }
 
