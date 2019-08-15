@@ -50,9 +50,10 @@ set_from_resource $base0D color12 #000000
 set_from_resource $base0E color5  #000000
 set_from_resource $baseFF color17 #f0f0f0
 set_from_resource $baseA0 color22 #445566
+set_from_resource $baseA1 color22 #bb9944
 
 #                       class   border  backgr. text indicator
-client.focused          $baseFF $baseFF $baseFF $base00
+client.focused          $baseFF $baseA1 $baseFF $base00
 client.focused_inactive $base03 $baseA0 $base03 $base00
 client.unfocused        $base03 $baseA0 $base05 $base00
 client.urgent           $base01 $base01 $base05 $base00
@@ -64,7 +65,6 @@ new_float  pixel 5
 set $mod Mod1
 
 # Terminal opens in a floating window
-for_window [class="terminal"] floating enable
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 # use these keys for focus, movement, and resize directions when reaching for
@@ -78,12 +78,11 @@ set $right l
 floating_modifier Mod1
 
 # gaps!
-gaps bottom 45
+gaps bottom 55
 gaps top 5
 gaps left 70
 gaps right 70
-gaps inner 10
-gaps outer all set 20
+gaps inner 20
 for_window [class=".*"] border pixel 2
 
 # start a terminal
@@ -103,8 +102,8 @@ bindsym Mod1+Shift+d exec dmenu_run
 # bindsym $mod+d exec rofi -show drun -location 5 -lines 4 -sidebar-mode -columns 3
 # bindsym $mod+d         exec sh ~/.config/i3/scripts/polybar_wrapper rofi
 # bindsym $mod+d exec rofi -show drun
-bindsym $mod+d exec rofi -show drun -show-icons -drun-icon-theme
-bindsym $mod+Tab exec rofi -show window -show-icons
+bindsym $mod+d exec rofi -show drun -display-drun "" -modi drun -theme ~/.config/rofi/sidebar
+bindsym $mod+Tab exec rofi -show window -theme ~/.config/rofi/sidebar
 
 # change focus
 bindsym Mod1+$left focus left
