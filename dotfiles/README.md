@@ -1,6 +1,6 @@
-# dotfiles
+Personal dotfiles to make the desktop look like this:
 
-My personal dofiles to make my desktop look something like this:
+![first-rice][./images/first_rice.jpg]
 
 
 
