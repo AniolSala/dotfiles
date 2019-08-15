@@ -103,7 +103,7 @@ bindsym Mod1+Shift+d exec dmenu_run
 # bindsym $mod+d         exec sh ~/.config/i3/scripts/polybar_wrapper rofi
 # bindsym $mod+d exec rofi -show drun
 bindsym $mod+d exec rofi -show drun -display-drun "" -modi drun -theme ~/.config/rofi/sidebar
-bindsym $mod+Tab exec rofi -show window -theme ~/.config/rofi/sidebar
+bindsym $mod+Tab exec rofi -show window -theme ~/.config/rofi/centered_bar
 
 # change focus
 bindsym Mod1+$left focus left

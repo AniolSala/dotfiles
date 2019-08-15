@@ -7,7 +7,7 @@ configuration {
     columns: 1;
 
     background-color: transparent;
-    background: #2A3440B0;
+    background: #2A3440BA;
     background-alt: #5E81AC80;
 
     border-color: #00000000;
@@ -23,9 +23,8 @@ configuration {
     padding: 0;
     width: 20%;
     height: 40%;
+    transparency:                   "real";
     background-color: @background;
-    location:                       center;
-    anchor:                         center;
 }
  
 #mainbox {
@@ -33,13 +32,10 @@ configuration {
     spacing: 40px;
     /*margin: 20%;*/
     padding: 20px 40px;
-    border: 1px;
-    border-color: @primary;
 }
  
- 
 #listview {
-    background-color: #00000000;
+    background-color: transparent;
     fixed-height: 0;
     border: 0px;
     spacing: 5px;
@@ -51,6 +47,8 @@ configuration {
     border: 0;
     border-radius: 15px;
     padding: 10px;
+    orientation: horizontal;
+    background-color: transparent;
 }
 
 element normal.urgent, element alternate.urgent {
