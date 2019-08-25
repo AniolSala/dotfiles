@@ -104,9 +104,12 @@ prompt_context () { }
 # Aliases
 # alias initcustom="xinput set-prop 10 318 1 && xinput set-prop 10 326 1 && xinput set-prop 10 338 .4 && exec bash"
 alias ba="exec bash"
-alias gterm="gnome-terminal"
+alias gt="gnome-terminal"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 source ~/.oh-my-zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.oh-my-zsh/themes/powerlevel10k/config/p10k-pure.zsh
+
+# Set theme with wal
+(cat ~/.cache/wal/sequences &)

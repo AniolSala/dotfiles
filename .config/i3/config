@@ -344,3 +344,4 @@ exec --no-startup-id conky
 exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/tiger_polygons.jpg
 exec --no-startup-id compton -cb --config ~/.config/compton/compton.conf
+exec --no-startup-id wal -R
