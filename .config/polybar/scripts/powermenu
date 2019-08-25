@@ -8,5 +8,5 @@ MENU="$(rofi -sep "|" -dmenu -i -p '' -mesg "Select option" -theme /home/usuari/
                 *Lock) ~/i3lock-color/lock2.sh && systemctl suspend ;;
                 *Logout) ~/i3lock-color/lock2.sh && systemctl suspend ;;
                 *Reboot) systemctl reboot ;;
-                *Shutdown) systemctl -i poweroff
+                *Shutdown) poweroff ;;
             esac
