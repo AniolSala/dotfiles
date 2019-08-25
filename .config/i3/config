@@ -49,7 +49,7 @@ set_from_resource $base0C color14 #000000
 set_from_resource $base0D color12 #000000
 set_from_resource $base0E color5  #000000
 set_from_resource $baseFF color17 #f0f0f0
-set_from_resource $baseA0 color22 #445566
+set_from_resource $baseA0 color22 #1c1c1c
 set_from_resource $baseA1 color22 #bb9944
 
 #                       class   border  backgr. text indicator
@@ -80,8 +80,8 @@ floating_modifier Mod1
 # gaps!
 gaps bottom 55
 gaps top 5
-gaps left 70
-gaps right 70
+gaps left 45
+gaps right 45
 gaps inner 20
 for_window [class=".*"] border pixel 2
 
