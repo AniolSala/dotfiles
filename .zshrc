@@ -108,3 +108,5 @@ alias gterm="gnome-terminal"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+source ~/.oh-my-zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.oh-my-zsh/themes/powerlevel10k/config/p10k-pure.zsh
