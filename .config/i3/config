@@ -48,9 +48,9 @@ set_from_resource $base0B color2  #000000
 set_from_resource $base0C color14 #000000
 set_from_resource $base0D color12 #000000
 set_from_resource $base0E color5  #000000
-set_from_resource $baseFF color17 #f0f0f0
+set_from_resource $baseFF background #f0f0f0
 set_from_resource $baseA0 color22 #1c1c1c
-set_from_resource $baseA1 color22 #bb9944
+set_from_resource $baseA1 color1 #bb9944
 
 #                       class   border  backgr. text indicator
 client.focused          $baseFF $baseA1 $baseFF $base00
@@ -78,10 +78,10 @@ set $right l
 floating_modifier Mod1
 
 # gaps!
-gaps bottom 55
-gaps top 5
-gaps left 45
-gaps right 45
+gaps bottom 0
+gaps top 40
+gaps left 0
+gaps right 1
 gaps inner 20
 for_window [class=".*"] border pixel 2
 
@@ -218,8 +218,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/controlBrithness.sh increase
+bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/controlBrithness.sh decrease
 
 # Lock
 # bindsym Mod4+l exec i3lock -i ~/Pictures/wallpapers/poly_asteroids.jpg
